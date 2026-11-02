@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\Users\\anyda\\orca\\workspaces\\innate-skills\\archify-analysis\\.archify\\architecture-archify-20261102-144010\\candidate.json",
+    "sha256": "a74a90ac13e244055dab9f779a9537570bf69f6e659f14a57f97f6d974f6c2bc",
+    "bytes": 7787
+  },
+  "artifact": {
+    "path": "C:\\Users\\anyda\\orca\\workspaces\\innate-skills\\archify-analysis\\.archify\\architecture-archify-20261102-144010\\archify-architecture.html",
+    "sha256": "bed42b5d8222e4979ba24b4f341719ed1398c82b336bf52c2703ea39c591c434",
+    "bytes": 856360
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\Users\\anyda\\orca\\workspaces\\innate-skills\\archify-analysis\\.archify\\architecture-archify-20261102-144010\\review-3\\archify-architecture.finalize.json",
+    "summaryReceipt": "C:\\Users\\anyda\\orca\\workspaces\\innate-skills\\archify-analysis\\.archify\\architecture-archify-20261102-144010\\review-3\\archify-architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\Users\\anyda\\orca\\workspaces\\innate-skills\\archify-analysis\\.archify\\architecture-archify-20261102-144010\\review-3\\archify-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-11-02T06:40:24.509Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 2998,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  }
+}
