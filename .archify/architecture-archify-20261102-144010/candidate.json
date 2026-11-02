@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Archify 技能包架构与生成流水线",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-archify-20261102-144010/archify-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/tt-a1i/archify",
+      "provider": "github",
+      "revision": "a4065941f12be7967436261d9934784e381d423c"
+    }
+  },
+  "layout": { "mode": "grid" },
+  "components": [
+    {
+      "id": "agent",
+      "type": "external",
+      "label": "AI 编码代理",
+      "sublabel": "Claude Code · Codex · Cursor",
+      "tag": "LLM",
+      "icon": "person",
+      "pos": [250, 40],
+      "size": [120, 60],
+      "sources": [
+        { "path": "README.md", "line": 61, "end_line": 61 },
+        { "path": "archify/SKILL.md", "line": 12, "end_line": 16 }
+      ]
+    },
+    {
+      "id": "skill",
+      "type": "backend",
+      "label": "Skill 指令包",
+      "sublabel": "SKILL.md + references/",
+      "tag": "写作规范",
+      "pos": [40, 40],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/SKILL.md", "line": 32, "end_line": 47 },
+        { "path": "archify/references/repository-authoring.md", "line": 1, "end_line": 16 }
+      ]
+    },
+    {
+      "id": "candidate",
+      "type": "database",
+      "label": "candidate.json",
+      "sublabel": "JSON-IR 候选",
+      "tag": "JSON",
+      "pos": [460, 40],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/SKILL.md", "line": 14, "end_line": 14 },
+        { "path": "archify/schemas/architecture.schema.json", "line": 1, "end_line": 10 }
+      ]
+    },
+    {
+      "id": "cli",
+      "type": "backend",
+      "label": "archify CLI",
+      "sublabel": "finalize 编排",
+      "tag": "Node ESM",
+      "pos": [650, 40],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/bin/archify.mjs", "line": 1, "end_line": 16 },
+        { "path": "archify/bin/archify.mjs", "line": 7213, "end_line": 7281 }
+      ]
+    },
+    {
+      "id": "viewer",
+      "type": "frontend",
+      "label": "Viewer 运行时",
+      "sublabel": "原生 JS/CSS",
+      "tag": "交互层",
+      "pos": [1062, 40],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/assets/template.html", "line": 1, "end_line": 10 },
+        { "path": "archify/references/viewer-runtime.md", "line": 1, "end_line": 15 }
+      ]
+    },
+    {
+      "id": "validator",
+      "type": "security",
+      "label": "Schema 校验",
+      "sublabel": "JSON Schema",
+      "tag": "IR 契约",
+      "pos": [650, 240],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/renderers/shared/validator.mjs", "line": 38, "end_line": 83 },
+        { "path": "archify/schemas/architecture.schema.json", "line": 1, "end_line": 10 }
+      ]
+    },
+    {
+      "id": "evidence",
+      "type": "security",
+      "label": "仓库证据校验",
+      "sublabel": "固定 SHA · git cat-file",
+      "tag": "可追溯",
+      "pos": [856, 240],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/renderers/shared/repository-evidence.mjs", "line": 155, "end_line": 170 },
+        { "path": "archify/renderers/shared/repository-evidence.mjs", "line": 23, "end_line": 36 }
+      ]
+    },
+    {
+      "id": "renderers",
+      "type": "backend",
+      "label": "类型渲染器",
+      "sublabel": "10 种图 + 共享布局",
+      "tag": "SVG",
+      "pos": [1062, 240],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/renderers/architecture/render-architecture.mjs", "line": 1, "end_line": 15 },
+        { "path": "archify/renderers/shared/cli.mjs", "line": 82, "end_line": 87 },
+        { "path": "archify/package.json", "line": 6, "end_line": 6 }
+      ]
+    },
+    {
+      "id": "delivery",
+      "type": "backend",
+      "label": "原子交付",
+      "sublabel": "写入 + 回执",
+      "tag": "可恢复",
+      "pos": [1275, 240],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/bin/finalize.mjs", "line": 833, "end_line": 846 },
+        { "path": "archify/renderers/shared/atomic-output.mjs", "line": 1522, "end_line": 1532 }
+      ]
+    },
+    {
+      "id": "output",
+      "type": "database",
+      "label": "独立 HTML",
+      "sublabel": "离线条图",
+      "tag": "standalone",
+      "pos": [1275, 420],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/bin/finalize.mjs", "line": 785, "end_line": 800 },
+        { "path": "archify/assets/template.html", "line": 1, "end_line": 10 }
+      ]
+    },
+    {
+      "id": "browser",
+      "type": "external",
+      "label": "Headless Chrome",
+      "sublabel": "多视口 · 双主题",
+      "tag": "浏览器检查",
+      "pos": [1062, 420],
+      "size": [120, 60],
+      "sources": [
+        { "path": "archify/bin/visual-check.mjs", "line": 37, "end_line": 48 },
+        { "path": "archify/bin/finalize.mjs", "line": 820, "end_line": 835 }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "渲染与校验内核（本地 Node.js）",
+      "wraps": ["validator", "evidence", "renderers", "delivery"],
+      "pad": 30
+    }
+  ],
+  "connections": [
+    { "id": "skill-to-agent", "from": "skill", "to": "agent", "label": "指令", "fromSide": "right", "toSide": "left" },
+    { "id": "agent-to-candidate", "from": "agent", "to": "candidate", "label": "编写 JSON", "fromSide": "right", "toSide": "left" },
+    { "id": "candidate-to-cli", "from": "candidate", "to": "cli", "label": "输入", "fromSide": "right", "toSide": "left" },
+    { "id": "cli-to-validator", "from": "cli", "to": "validator", "label": "validate", "fromSide": "bottom", "toSide": "top" },
+    { "id": "validator-to-evidence", "from": "validator", "to": "evidence", "label": "校验来源", "fromSide": "right", "toSide": "left" },
+    { "id": "evidence-to-renderers", "from": "evidence", "to": "renderers", "label": "通过", "fromSide": "right", "toSide": "left" },
+    { "id": "renderers-to-delivery", "from": "renderers", "to": "delivery", "label": "生成 HTML", "fromSide": "right", "toSide": "left" },
+    { "id": "delivery-to-output", "from": "delivery", "to": "output", "label": "原子写入", "fromSide": "bottom", "toSide": "top" },
+    { "id": "output-to-browser", "from": "output", "to": "browser", "label": "加载检查", "fromSide": "left", "toSide": "right" },
+    { "id": "viewer-to-renderers", "from": "viewer", "to": "renderers", "label": "模板注入", "fromSide": "bottom", "toSide": "top" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "技术栈",
+      "items": [
+        "Node.js ≥18 ESM；渲染与校验运行时零第三方依赖",
+        "JSON Schema 定义 10 种图的 IR，构建期生成独立校验器",
+        "SVG 由类型渲染器生成，HTML 内嵌原生 JS/CSS Viewer",
+        "Headless Chrome 做多视口、双主题的自动检查"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "核心模块",
+      "items": [
+        "bin/archify.mjs：render、validate、deliver、finalize 等命令",
+        "renderers/：10 个类型渲染器 + 共享布局/路由/几何",
+        "schemas/ 与 references/：IR 契约与代理写作规范",
+        "explainer/、locales/、brand-marks/：一页解释、国际化、品牌"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "生成要点",
+      "items": [
+        "LLM 只产出候选 JSON；路由、标签与几何由确定性渲染器计算",
+        "仓库事实绑定到 40 位 commit SHA，逐条校验 path/line",
+        "finalize 四道门：validate → deliver → check → browser-check",
+        "原子写入与回执，失败不覆盖已交付产物"
+      ]
+    }
+  ]
+}

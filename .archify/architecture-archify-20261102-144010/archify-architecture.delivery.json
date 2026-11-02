@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "69963c30-df92-46f1-926e-b7648730810f",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\anyda\\orca\\workspaces\\innate-skills\\archify-analysis\\.archify\\architecture-archify-20261102-144010\\candidate.json",
+  "output": "C:\\Users\\anyda\\orca\\workspaces\\innate-skills\\archify-analysis\\.archify\\architecture-archify-20261102-144010\\archify-architecture.html",
+  "specification": {
+    "sha256": "a74a90ac13e244055dab9f779a9537570bf69f6e659f14a57f97f6d974f6c2bc",
+    "bytes": 7787
+  },
+  "artifact": {
+    "sha256": "bed42b5d8222e4979ba24b4f341719ed1398c82b336bf52c2703ea39c591c434",
+    "bytes": 856360
+  }
+}
