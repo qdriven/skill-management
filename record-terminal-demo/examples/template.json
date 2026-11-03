@@ -1,0 +1,19 @@
+{
+  "output": "docs/demo.gif",
+  "cleanup": "rm -rf demo-tmp",
+  "width": 1700,
+  "height": 680,
+  "font_size": 16,
+  "steps": [
+    {
+      "label": "help",
+      "command": "uv run <tool> --help < /dev/null",
+      "wait": 3
+    },
+    {
+      "label": "TUI run",
+      "command": "uv run <tool> run --dest demo-tmp",
+      "wait": 15
+    }
+  ]
+}
