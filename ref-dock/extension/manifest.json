@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "RefDock — references 一键 clone",
+  "short_name": "RefDock",
+  "version": "0.1.0",
+  "description": "在 GitHub 页面一键 clone 仓库到本地 references 对应类别目录,实时浏览 registry 结构。",
+  "permissions": ["activeTab", "clipboardWrite", "storage"],
+  "host_permissions": ["http://127.0.0.1/*", "http://localhost/*"],
+  "action": {
+    "default_title": "RefDock",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" }
+  },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "open-refdock": {
+      "suggested_key": { "default": "Alt+R" },
+      "description": "打开 RefDock 弹窗"
+    }
+  },
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" }
+}

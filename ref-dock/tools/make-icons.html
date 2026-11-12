@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8" />
+<title>RefDock 图标生成</title>
+<style>
+  body { font: 14px system-ui; background: #f4faf6; color: #12271b; padding: 40px; }
+  canvas { border-radius: 22%; box-shadow: 0 2px 10px rgba(16,185,129,.4); margin: 8px; }
+  button { font: 600 14px system-ui; padding: 8px 16px; border: none; border-radius: 8px;
+           background: #10b981; color: #fff; cursor: pointer; margin-top: 16px; }
+</style>
+</head>
+<body>
+<h1>RefDock 图标生成器</h1>
+<p>点击按钮生成并下载全部尺寸,放到 extension/icons/ 下。</p>
+<div id="out"></div>
+<button id="go">生成并下载 PNG</button>
+
+<script>
+const SIZES = [16, 32, 48, 128];
+function draw(size) {
+  const c = document.createElement('canvas');
+  c.width = c.height = size;
+  const x = c.getContext('2d');
+  const r = size * 0.22;
+  // rounded-rect background
+  x.beginPath();
+  x.moveTo(r, 0);
+  x.arcTo(size, 0, size, size, r);
+  x.arcTo(size, size, 0, size, r);
+  x.arcTo(0, size, 0, 0, r);
+  x.arcTo(0, 0, size, 0, r);
+  x.closePath();
+  const g = x.createLinearGradient(0, 0, size, size);
+  g.addColorStop(0, '#34d399');
+  g.addColorStop(1, '#059669');
+  x.fillStyle = g;
+  x.fill();
+  // letter R
+  x.fillStyle = '#ffffff';
+  x.font = `700 ${Math.round(size * 0.62)}px 'Segoe UI', system-ui, sans-serif`;
+  x.textAlign = 'center';
+  x.textBaseline = 'middle';
+  x.fillText('R', size / 2, size / 2 + size * 0.04);
+  return c;
+}
+const out = document.getElementById('out');
+for (const s of SIZES) out.appendChild(draw(s));
+document.getElementById('go').onclick = () => {
+  for (const s of SIZES) {
+    const a = document.createElement('a');
+    a.download = s + '.png';
+    a.href = draw(s).toDataURL('image/png');
+    a.click();
+  }
+};
+</script>
+</body>
+</html>
