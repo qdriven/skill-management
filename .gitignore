@@ -4,3 +4,8 @@ __pycache__/
 *.pyo
 .pytest_cache/
 *.egg-info/
+
+# references 三分层布局：<分类>/<子分类>/<项目>。
+# 分类与子分类目录入库（.gitkeep），项目目录都是开源 clone，不入库，
+# 由根目录 registry_references.yaml（spark repo scan）记录来源并克隆。
+/references/*/*/*/
