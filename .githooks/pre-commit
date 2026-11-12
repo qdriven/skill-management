@@ -1,0 +1,50 @@
+#!/bin/sh
+# pre-commit — 扫描 references/ 新增/删除的 git 仓库，重生成 registry_references.yaml，
+# 并把它一并暂存进本次提交（"一起提交"）。
+#
+# 行为约定：
+#   1) 只有提交涉及 references/**（含新增、删除、改名）或 registry 缺失时才扫描，
+#      平均耗时约 0.4s，幂等（连续两次输出字节一致）。
+#   2) spark 缺失 / 扫描失败：打印告警但不阻断提交（fail-open）。
+#      references 内容仍以 git 的 gitlink(160000) 记录，registry 只是恢复凭据。
+#   3) 只 `git add registry_references.yaml`，不改动其他已暂存内容。
+#
+# 启用方式（本仓无 package.json/install 脚本，需一次性本地配置，README 有说明）：
+#   git config core.hooksPath .githooks
+set -eu
+
+top="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+cd "$top"
+
+registry="registry_references.yaml"
+
+need=0
+if [ ! -f "$registry" ]; then
+  need=1
+elif git diff --cached --name-only | grep -q '^references/'; then
+  # 覆盖 A/M/D：删除参考仓同样要从 registry 里去掉
+  need=1
+fi
+[ "$need" -eq 1 ] || exit 0
+
+spark_bin="$(command -v spark 2>/dev/null || true)"
+if [ -z "$spark_bin" ] && [ -x "$HOME/.local/bin/spark" ]; then
+  spark_bin="$HOME/.local/bin/spark"
+fi
+if [ -z "$spark_bin" ]; then
+  echo "pre-commit: 未找到 spark，跳过 registry 生成（不阻断本次提交；装好 spark 后下次自动补上）" >&2
+  exit 0
+fi
+
+if ! "$spark_bin" repo scan references >/dev/null; then
+  echo "pre-commit: spark repo scan 失败，跳过 registry 更新（不阻断本次提交）" >&2
+  exit 0
+fi
+
+if [ -f "$registry" ]; then
+  git add -- "$registry"
+else
+  echo "pre-commit: 扫描后仍未生成 $registry" >&2
+fi
+
+exit 0

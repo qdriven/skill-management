@@ -1,0 +1,112 @@
+# Project registry
+# Synced by spark repo scan
+
+projects:
+    - name: agency-agents-zh
+      repo: https://github.com/jnMetaCode/agency-agents-zh.git
+      path: agency-agents-zh
+    - name: anything2explainer
+      repo: https://github.com/Vincentwei1021/anything2explainer.git
+      path: anything2explainer
+    - name: archify
+      repo: https://github.com/tt-a1i/archify.git
+      path: archify
+    - name: beter-design
+      repo: https://github.com/jakubkrehel/skills.git
+      path: beter-design
+    - name: explainer-video-skills
+      repo: https://github.com/iart-ai/explainer-video-skills.git
+      path: explainer-video-skills
+    - name: fire-skills
+      repo: https://github.com/variableway/fire-skills.git
+      path: fire-skills
+    - name: 01-obra-superpowers
+      repo: https://github.com/obra/superpowers.git
+      path: fire-skills/downloads/01-obra-superpowers
+    - name: 02-anthropics-skills
+      repo: https://github.com/anthropics/skills.git
+      path: fire-skills/downloads/02-anthropics-skills
+    - name: 03-addyosmani-agent-skills
+      repo: https://github.com/addyosmani/agent-skills.git
+      path: fire-skills/downloads/03-addyosmani-agent-skills
+    - name: 04-wshobson-agents
+      repo: https://github.com/wshobson/agents.git
+      path: fire-skills/downloads/04-wshobson-agents
+    - name: 05-github-awesome-copilot
+      repo: https://github.com/github/awesome-copilot.git
+      path: fire-skills/downloads/05-github-awesome-copilot
+    - name: 06-mattpocock-skills
+      repo: https://github.com/mattpocock/skills.git
+      path: fire-skills/downloads/06-mattpocock-skills
+    - name: 07-snarktank-ralph
+      repo: https://github.com/snarktank/ralph.git
+      path: fire-skills/downloads/07-snarktank-ralph
+    - name: 11-productskills
+      repo: https://github.com/assimovt/productskills.git
+      path: fire-skills/downloads/11-productskills
+    - name: 12-britt-claude-code-skills
+      repo: https://github.com/britt/claude-code-skills.git
+      path: fire-skills/downloads/12-britt-claude-code-skills
+    - name: 13-jamesrochabrun-skills
+      repo: https://github.com/jamesrochabrun/skills.git
+      path: fire-skills/downloads/13-jamesrochabrun-skills
+    - name: 14-agentic-qe
+      repo: https://github.com/proffesor-for-testing/agentic-qe.git
+      path: fire-skills/downloads/14-agentic-qe
+    - name: 16-testdino-playwright-skill
+      repo: https://github.com/testdino-hq/playwright-skill.git
+      path: fire-skills/downloads/16-testdino-playwright-skill
+    - name: 17-fugazi-test-automation
+      repo: https://github.com/fugazi/test-automation-skills-agents.git
+      path: fire-skills/downloads/17-fugazi-test-automation
+    - name: 18-pypict-claude-skill
+      repo: https://github.com/omkamal/pypict-claude-skill.git
+      path: fire-skills/downloads/18-pypict-claude-skill
+    - name: 19-petrkindlmann-qa-skills
+      repo: https://github.com/petrkindlmann/qa-skills.git
+      path: fire-skills/downloads/19-petrkindlmann-qa-skills
+    - name: 20-clear-solutions-unit-tests
+      repo: https://github.com/clear-solutions/unit-tests-skills.git
+      path: fire-skills/downloads/20-clear-solutions-unit-tests
+    - name: lobehub
+      repo: https://github.com/lobehub/lobehub.git
+      path: fire-skills/references/lobehub
+    - name: promptfoo
+      repo: https://github.com/promptfoo/promptfoo.git
+      path: fire-skills/references/promptfoo
+    - name: skills-manage
+      repo: https://github.com/iamzhihuix/skills-manage.git
+      path: fire-skills/references/skills-manage
+    - name: skills-manager
+      repo: https://github.com/xingkongliang/skills-manager.git
+      path: fire-skills/references/skills-manager
+    - name: hallmark
+      repo: https://github.com/Nutlope/hallmark.git
+      path: hallmark
+    - name: hand-drawn-explainer-video-nikola
+      repo: https://github.com/hi-nikola/hand-drawn-explainer-video-nikola.git
+      path: hand-drawn-explainer-video-nikola
+    - name: how
+      repo: https://github.com/poteto/how.git
+      path: how
+    - name: impeccable
+      repo: https://github.com/pbakaus/impeccable.git
+      path: impeccable
+    - name: skills
+      repo: https://github.com/TerminalSkills/skills.git
+      path: skills
+    - name: taste-skill
+      repo: https://github.com/Leonxlnx/taste-skill.git
+      path: taste-skill
+    - name: teachable-figures
+      repo: https://github.com/ywEdAi/teachable-figures
+      path: teachable-figures
+    - name: visual-explainer
+      repo: https://github.com/nicobailon/visual-explainer.git
+      path: visual-explainer
+    - name: wallstreet-explainer
+      repo: https://github.com/HeyChengC/wallstreet-explainer.git
+      path: wallstreet-explainer
+    - name: whiteboard-explainer
+      repo: https://github.com/liangdabiao/whiteboard-explainer.git
+      path: whiteboard-explainer
