@@ -9,3 +9,15 @@ __pycache__/
 # 分类与子分类目录入库（.gitkeep），项目目录都是开源 clone，不入库，
 # 由根目录 registry_references.yaml（spark repo scan）记录来源并克隆。
 /references/*/*/*/
+
+# video-agent-kit 插件运行残留
+/.video_agent/
+
+# personal/ 内整仓搬入的独立 git 仓：.git 是其唯一本地历史（原件已从
+# innate-apps 移除，上游在各自 GitHub 仓），整目录不入本仓。
+/personal/fire-skills/
+/personal/devops-skill/
+/personal/figures-skill/
+/personal/fin-skills/
+/personal/presentation-skills/
+/personal/wip-skills/
