@@ -30,7 +30,9 @@ references/
   项目归 `others`；完全没有一级分类目录的普通目录仍写旧扁平 `projects:` 格式）。
 - 恢复：`spark repo clone -f registry_references.yaml`——按 `path` 还原，
   先克隆父项目、再克隆其内部的嵌套仓。
-- 新增/删除项目由 pre-commit 钩子自动扫描并**随同一次提交**更新该 registry。
+- 新增项目由 pre-commit 钩子自动扫描并**随同一次提交**更新该 registry；删除条目
+  不自动化——spark v0.3.4 起 scan 是**合并非替换**，本地未 clone 的条目原样保留
+  （registry 兼作恢复记录），要移除某仓只能手工编辑 registry 文件。
 
 用 pre-commit 钩子自动生成并**随同一次提交一起入库**（一次性启用）：
 
@@ -40,7 +42,7 @@ spark repo scan references              # 手动生成/校验 registry
 ```
 
 - 触发条件：本次提交涉及 `references/**`（增/删/改名）或 registry 缺失；约 0.4s，
-  幂等，重扫会同步删除已移除的仓。
+  幂等；重扫合并非替换——本地缺失的条目保留，删除条目需手工编辑。
 - `spark` 未安装或扫描失败时**告警但不阻断提交**（registry 事后可补）。
 - 局限：registry 只收录**带 origin remote 的 git 仓**；无 origin 的普通目录不入册
   ——历史已入库的本仓自有内容（`references/skills/dev-tool/clone-website`）用

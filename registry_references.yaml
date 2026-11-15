@@ -10,7 +10,19 @@ categories:
     - name: products
       subcategories:
         - name: others
-          projects: []
+          projects:
+            - name: LibreChat
+              repo: https://github.com/LibreChat-AI/LibreChat.git
+              path: products/others/LibreChat
+            - name: shi
+              repo: https://github.com/agate/shi.git
+              path: products/others/shi
+            - name: soundbox
+              repo: https://github.com/HamSanders/soundbox.git
+              path: products/others/soundbox
+            - name: zaoba
+              repo: https://github.com/BorisSun0424-boop/zaoba.git
+              path: products/others/zaoba
     - name: skills
       subcategories:
         - name: agent
@@ -18,8 +30,31 @@ categories:
             - name: agency-agents-zh
               repo: https://github.com/jnMetaCode/agency-agents-zh.git
               path: skills/agent/agency-agents-zh
+            - name: foshuo
+              repo: https://github.com/qzpthuhhu/foshuo.git
+              path: skills/agent/foshuo
+        - name: design
+          projects:
+            - name: frontend-arsenal
+              repo: https://github.com/exasdwyh-commits/frontend-arsenal.git
+              path: skills/design/frontend-arsenal
+            - name: vibe-coding-dictionary
+              repo: https://github.com/qzpthuhhu/vibe-coding-dictionary.git
+              path: skills/design/vibe-coding-dictionary
         - name: dev
           projects:
+            - name: EAC-Desktop
+              repo: https://github.com/Ebony-Vinyl/EAC-Desktop.git
+              path: skills/dev/EAC-Desktop
+            - name: craft-anything
+              repo: https://github.com/storytold/craft-anything.git
+              path: skills/dev/craft-anything
+            - name: mcode-stack
+              repo: https://github.com/MiniMax-AI/mcode-stack.git
+              path: skills/dev/mcode-stack
+            - name: pero
+              repo: https://github.com/phodal/pero.git
+              path: skills/dev/pero
             - name: show-me-you-want-skill
               repo: https://github.com/nishuzumi/show-me-you-want-skill.git
               path: skills/dev/show-me-you-want-skill
@@ -96,11 +131,20 @@ categories:
               path: skills/dev-tool/fire-skills/references/skills-manager
         - name: edu
           projects:
+            - name: edulab
+              repo: https://github.com/wy51ai/edulab.git
+              path: skills/edu/edulab
+            - name: html-explainer
+              repo: https://github.com/OneMoh/html-explainer.git
+              path: skills/edu/html-explainer
             - name: teachable-figures
               repo: https://github.com/ywEdAi/teachable-figures
               path: skills/edu/teachable-figures
         - name: explainer
           projects:
+            - name: anatomy
+              repo: https://github.com/wheresryan22/anatomy.git
+              path: skills/explainer/anatomy
             - name: anything2explainer
               repo: https://github.com/Vincentwei1021/anything2explainer.git
               path: skills/explainer/anything2explainer
@@ -133,6 +177,9 @@ categories:
             - name: impeccable
               repo: https://github.com/pbakaus/impeccable.git
               path: skills/ui-ux/impeccable
+            - name: qiaomu-ui-learn
+              repo: https://github.com/joeseesun/qiaomu-ui-learn.git
+              path: skills/ui-ux/qiaomu-ui-learn
             - name: taste-skill
               repo: https://github.com/Leonxlnx/taste-skill.git
               path: skills/ui-ux/taste-skill
