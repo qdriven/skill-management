@@ -34,7 +34,7 @@ description: spark 命令行工具的使用说明。当用户需要批量更新/
 4. 触发时机：`spark version` 输出与本节记录的版本不一致，或 spark-cli 的
    CHANGELOG 出现影响 `repo` / `skill` / `git` 命令面的条目。
 
-> 上次同步：spark **v0.4.0**（repo scan 保留本地缺失条目 + 新增 clone-registry）· 2026-11-15
+> 上次同步：spark **v0.4.0+**（clone/clone-registry 支持 `--depth` 浅克隆，commit `745cd48`）· 2026-11-15
 
 ---
 
@@ -150,6 +150,7 @@ spark repo clone -f registry_workspace.yaml       # 克隆全部
 spark repo clone -r spark-cli -f registry_workspace.yaml   # 只克隆一个
 spark repo clone-registry registry_workspace.yaml --dry-run  # 只看本地缺失的清单
 spark repo clone-registry registry_workspace.yaml            # 只补齐本地缺失的仓（目标目录由 registry 文件位置推导）
+spark repo clone-registry registry_workspace.yaml --depth 1  # 浅克隆补齐（只要最新提交，参考仓推荐）
 ```
 
 重扫是**合并而非替换**（v0.3.4+）：本地缺失的条目原样保留——registry 兼作恢复
